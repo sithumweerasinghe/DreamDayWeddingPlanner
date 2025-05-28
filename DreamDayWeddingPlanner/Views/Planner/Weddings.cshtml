@@ -1,0 +1,29 @@
+﻿@model List<DreamDayWeddingPlanner.Models.Wedding>
+
+<h2>Weddings</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Couple</th>
+            <th>Manage Vendors</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var wedding in Model)
+        {
+            <tr>
+                <td>@wedding.Title</td>
+                <td>@wedding.WeddingDate.ToShortDateString()</td>
+                <td>@wedding.Location</td>
+                <td>@wedding.CoupleUsername</td>
+                <td>
+                    <a href="@Url.Action("AssignVendors", "Planner", new { weddingId = wedding.WeddingId })" class="btn btn-primary">Assign Vendors</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

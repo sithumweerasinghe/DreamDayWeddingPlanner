@@ -1,0 +1,55 @@
+﻿@model List<DreamDayWeddingPlanner.Models.Checklist>
+
+@{
+    ViewBag.Title = "Checklist";
+    int weddingId = (int)ViewBag.WeddingId;
+}
+
+<h2>Wedding Checklist</h2>
+
+@using (Html.BeginForm("AddChecklistTask", "Couple", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("weddingId", weddingId)
+
+    <div class="form-group">
+        <input type="text" name="task" class="form-control" placeholder="Add new task..." required />
+    </div>
+    <button type="submit" class="btn btn-success">Add Task</button>
+}
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Completed</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Task</td>
+                <td>
+                    @if (item.IsCompleted)
+                    {
+                        <span class="text-success">✔️</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">✘</span>
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("ToggleChecklistStatus", "Couple", new { checklistId = item.ChecklistId, weddingId = weddingId })" class="btn btn-sm btn-warning">Toggle</a>
+                    <a href="@Url.Action("DeleteChecklistTask", "Couple", new { checklistId = item.ChecklistId, weddingId = weddingId })" class="btn btn-sm btn-danger" onclick="return confirm('Delete this task?');">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a href="@Url.Action("MyWeddings", "Couple")" class="btn btn-secondary">Back to My Weddings</a>
+</p>

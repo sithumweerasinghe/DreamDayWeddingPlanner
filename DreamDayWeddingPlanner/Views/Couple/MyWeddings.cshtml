@@ -1,0 +1,38 @@
+﻿@model List<DreamDayWeddingPlanner.Models.Wedding>
+
+@{
+    ViewBag.Title = "My Weddings";
+}
+
+<h2>My Weddings</h2>
+
+@if (!Model.Any())
+{
+    <p>You have no weddings yet. <a href="@Url.Action("CreateWedding", "Couple")">Create one</a>.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Wedding Date</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var wedding in Model)
+            {
+                <tr>
+                    <td>@wedding.Title</td>
+                    <td>@wedding.WeddingDate.ToShortDateString()</td>
+                    <td>@wedding.Location</td>
+                    <td>
+                        <a href="@Url.Action("Checklist", "Couple", new { weddingId = wedding.WeddingId })" class="btn btn-primary btn-sm">Checklist</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

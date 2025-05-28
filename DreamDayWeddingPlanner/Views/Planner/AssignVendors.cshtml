@@ -1,0 +1,38 @@
+﻿@model DreamDayWeddingPlanner.Models.Wedding
+
+@{
+    ViewBag.Title = "Assign Vendors";
+    var vendors = ViewBag.AllVendors as List<DreamDayWeddingPlanner.Models.Vendor>;
+    var assignedVendors = ViewBag.AssignedVendors as List<DreamDayWeddingPlanner.Models.Vendor>;
+}
+
+<h2>Assign Vendors to Wedding: @Model.Title</h2>
+
+<h4>Currently Assigned Vendors:</h4>
+<ul>
+    @foreach (var v in assignedVendors)
+    {
+        <li>@v.Name (@v.Category)</li>
+    }
+</ul>
+
+<h4>Add New Vendor:</h4>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label for="vendorId">Select Vendor</label>
+        <select name="vendorId" class="form-control" required>
+            <option value="">-- Select a vendor --</option>
+            @foreach (var v in vendors)
+            {
+                <option value="@v.VendorId">@v.Name (@v.Category)</option>
+            }
+        </select>
+    </div>
+    <input type="hidden" name="weddingId" value="@Model.WeddingId" />
+    <button type="submit" class="btn btn-success">Assign Vendor</button>
+}
+
+<p>
+    <a href="@Url.Action("Weddings", "Planner")" class="btn btn-secondary">Back to Weddings List</a>
+</p>

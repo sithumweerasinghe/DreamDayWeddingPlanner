@@ -1,0 +1,38 @@
+﻿@model List<DreamDayWeddingPlanner.Models.Vendor>
+
+@{
+    ViewBag.Title = "Browse Vendors";
+}
+
+<h2>Browse Vendors</h2>
+
+@if (!Model.Any())
+{
+    <p>No vendors found.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vendor in Model)
+            {
+                <tr>
+                    <td>@vendor.Name</td>
+                    <td>@vendor.Category</td>
+                    <td>@vendor.Description</td>
+                    <td>$@vendor.Price</td>
+                    <td>@vendor.Rating ⭐</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
