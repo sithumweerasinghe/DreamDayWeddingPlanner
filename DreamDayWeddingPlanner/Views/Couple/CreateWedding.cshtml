@@ -1,33 +1,40 @@
 ﻿@model DreamDayWeddingPlanner.Models.Wedding
+
 @{
     ViewBag.Title = "Create Wedding";
 }
 
-<h2>Create Your Wedding</h2>
+<div class="container mt-5">
+    <h2 class="text-center">Plan Your Big Day</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        <label>Title</label>
-        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", required = "required" })
+        <div class="form-group">
+            <label>Title</label>
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control", required = "required", placeholder = "e.g., John & Jane's Wedding" })
+        </div>
+
+        <div class="form-group">
+            <label>Date</label>
+            @Html.TextBoxFor(m => m.WeddingDate, new { @type = "date", @class = "form-control", required = "required" })
+        </div>
+
+        <div class="form-group">
+            <label>Location</label>
+            @Html.TextBoxFor(m => m.Location, new { @class = "form-control", required = "required", placeholder = "e.g., Hilton Colombo" })
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Create Wedding</button>
+    }
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success mt-3">@ViewBag.Message</div>
+    }
+
+    <div class="text-center mt-3">
+        <a href="@Url.Action("MyWeddings", "Couple")" class="btn btn-outline-secondary">Back to My Weddings</a>
     </div>
-
-    <div class="form-group">
-        <label>Date</label>
-        @Html.TextBoxFor(m => m.WeddingDate, new { @type = "date", @class = "form-control", required = "required" })
-    </div>
-
-    <div class="form-group">
-        <label>Location</label>
-        @Html.TextBoxFor(m => m.Location, new { @class = "form-control", required = "required" })
-    </div>
-
-    <button type="submit" class="btn btn-success">Create</button>
-}
-
-@if (ViewBag.Message != null)
-{
-    <div class="alert alert-success">@ViewBag.Message</div>
-}
+</div>

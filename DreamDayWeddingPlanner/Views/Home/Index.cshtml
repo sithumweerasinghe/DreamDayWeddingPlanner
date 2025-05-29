@@ -3,104 +3,133 @@
 }
 
 <style>
-/* Remove margin and padding from body and html to ensure no space around the edges */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: 100%;
-    overflow-x: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    /* Remove margin and padding from body and html to ensure no space around the edges */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        height: 100%;
+        overflow-x: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-/* Hero section */
-.hero {
-    position: relative;
-    background: url('/Content/images/pexels-focus-weddingg-2151945653-31944807.jpg') no-repeat center center / cover;
-    width: 100%;
-    min-height: 100vh; /* at least full viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 5vw; /* relative padding left and right */
-    color: white;
-    text-shadow: 0 0 15px rgba(0,0,0,0.7);
-    box-sizing: border-box;
-}
+    /* Hero section */
+    .hero {
+        width: 100%;
+        min-height: 100vh; /* at least full viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 5vw; /* relative padding left and right */
+        color: white;
+        text-shadow: 0 0 15px rgba(0,0,0,0.7);
+        box-sizing: border-box;
+    }
 
-/* Dark overlay */
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0; */
-    background: rgba(0,0,0,0.45);
-    z-index: 0;
-}
+        /* Dark overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0; */
+            background: rgba(0,0,0,0.45);
+            z-index: 0;
+        }
 
-/* Hero text container to keep text above overlay */
-.hero > * {
-    position: relative;
-    z-index: 1;
-}
+        /* Hero text container to keep text above overlay */
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
 
-/* Responsive hero heading */
-.hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* scales smoothly between 2.5rem and 4rem */
-    margin-bottom: 1rem;
-    max-width: 700px;
-}
+        /* Responsive hero heading */
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem); /* scales smoothly between 2.5rem and 4rem */
+            margin-bottom: 1rem;
+            max-width: 700px;
+        }
 
-/* Responsive paragraph */
-.hero p {
-    font-size: clamp(1rem, 2vw, 1.8rem);
-    max-width: 650px;
-    margin-bottom: 2rem;
-}
+        /* Responsive paragraph */
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.8rem);
+            max-width: 650px;
+            margin-bottom: 2rem;
+        }
 
-/* Button */
-.btn-primary {
-    background-color: #d6862e;
-    color: white;
-    padding: 12px 35px;
-    border: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 12px rgba(214,134,46, 0.5);
-}
+    .body-content {
+        margin: 0px !important;
+        padding: 0px;
+        width: 100%;
+        height: auto;
+    }
 
-.btn-primary:hover {
-    background-color: #b56f25;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(181,111,37, 0.7);
-}
+    /* Button */
+    .btn-primary {
+        background-color: #d6862e;
+        color: white;
+        padding: 12px 35px;
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 12px rgba(214,134,46, 0.5);
+    }
 
-/* Footer Styling */
-footer {
-    background: #2c2c2c;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        .btn-primary:hover {
+            background-color: #b56f25;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(181,111,37, 0.7);
+        }
 
-/* Responsive adjustments for smaller screens */
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+
+
+
+    /* Footer Styling */
+    footer {
+        background: #2c2c2c;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        font-size: 1rem;
+        font-weight: 500;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Responsive adjustments for smaller screens */
 
 </style>
 
 <section class="hero">
+    <video autoplay muted loop id="bg-video">
+        <source src="/Content/videos/8776122-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <h1>Plan Your Perfect Wedding with Ease</h1>
     <p>Discover trusted vendors, manage your budget, and organize your dream wedding all in one place.</p>
     <a href="@Url.Action("Register", "Account")" class="btn-primary">Get Started</a>
 </section>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">@TempData["Message"]</div>
+}

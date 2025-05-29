@@ -3,23 +3,40 @@
     ViewBag.Title = "Add Planner";
 }
 
+<style>
+    .forms {
+        width: 100%;
+        justify-items: center;
+    }
+</style>
+
 <h2>Add New Planner</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+<div class="forms">
+    
     <div class="form-group">
         @Html.LabelFor(m => m.Username)
-        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", required = "required" })
+        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
     </div>
+
     <div class="form-group">
         @Html.LabelFor(m => m.Email)
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", required = "required" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
     </div>
+
     <div class="form-group">
         @Html.Label("Password")
-        @Html.Password("Password", null, new { @class = "form-control" })
+        @Html.Password("Password", null, new { @class = "form-control", required = "required" })
+        @Html.ValidationMessage("Password", "", new { @class = "text-danger" })
     </div>
+
     <button type="submit" class="btn btn-success">Add Planner</button>
+    <a href="@Url.Action("Dashboard", "Admin")" class="btn btn-secondary mt-3">Back to Dashboard</a>
+
+</div>
 }
