@@ -26,6 +26,7 @@
                             <p class="card-text"><strong>Rating:</strong> @vendor.Rating ⭐</p>
                             <a href="#" class="btn btn-outline-primary w-100">Contact Vendor</a>
                         </div>
+                        <a href="@Url.Action("AddToCart", "Couple", new { vendorId = vendor.VendorId })" class="btn btn-success w-100">Add to Budget</a>
                     </div>
                 </div>
             }

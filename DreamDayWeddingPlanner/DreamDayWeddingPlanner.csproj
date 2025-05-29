@@ -174,14 +174,19 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CoupleController.cs" />
+    <Compile Include="Controllers\GuestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlannerController.cs" />
+    <Compile Include="Controllers\TimelineController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataAccess\Db.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Checklist.cs" />
+    <Compile Include="Models\Guest.cs" />
+    <Compile Include="Models\TimelineEvent.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Models\Wedding.cs" />
@@ -242,6 +247,11 @@
     <Content Include="Views\Planner\EditVendor.cshtml" />
     <Content Include="Views\Admin\AddPlanner.cshtml" />
     <Content Include="Views\Admin\DeletePlanner.cshtml" />
+    <Content Include="Views\Couple\Cart.cshtml" />
+    <Content Include="Views\Timeline\Index.cshtml" />
+    <Content Include="Views\Timeline\Add.cshtml" />
+    <Content Include="Views\Guest\Index.cshtml" />
+    <Content Include="Views\Guest\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

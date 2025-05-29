@@ -15,9 +15,19 @@
                     <li class="list-group-item"><strong>Title:</strong> @Model.Title</li>
                     <li class="list-group-item"><strong>Date:</strong> @Model.WeddingDate.ToString("yyyy-MM-dd")</li>
                     <li class="list-group-item"><strong>Location:</strong> @Model.Location</li>
+                    <div class="budget-box">
+                        <h3>Total Budget:</h3>
+                        <p style="font-size: 1.5em; color: green;">@ViewBag.TotalAmount.ToString("C")</p>
+                    </div>
+
                 </ul>
                 <a href="@Url.Action("Checklist", "Couple", new { weddingId = Model.WeddingId })" class="btn btn-primary mt-3">Go to Checklist</a>
                 <a href="@Url.Action("BrowseVendors", "Couple")" class="btn btn-info mt-3 ml-2">Browse Vendors</a>
+                <a href="@Url.Action("Cart", "Couple")" class="btn btn-warning mt-2">View Budget Cart</a>
+                <a href="@Url.Action("Index", "Timeline")" class="btn btn-primary">Manage Wedding Timeline</a>
+                <a href="@Url.Action("Index", "Guest")" class="btn btn-primary">Manage Guests</a>
+
+
             </div>
         </div>
     }

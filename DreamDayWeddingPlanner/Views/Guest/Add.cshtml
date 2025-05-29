@@ -1,0 +1,33 @@
+@model DreamDayWeddingPlanner.Models.Guest
+
+<h2>Add Guest</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.GuestName)
+        @Html.TextBoxFor(m => m.GuestName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.RsvpStatus)
+        @Html.DropDownListFor(m => m.RsvpStatus, new SelectList(new[] { "Pending", "Accepted", "Declined" }), "Select RSVP", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MealPreference)
+        @Html.TextBoxFor(m => m.MealPreference, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.SeatNumber)
+        @Html.TextBoxFor(m => m.SeatNumber, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}

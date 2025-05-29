@@ -1,0 +1,28 @@
+<h2>Wedding Day Timeline</h2>
+<a href="@Url.Action("Add", "Timeline")" class="btn btn-primary">Add New Event</a>
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Event</th>
+            <th>Description</th>
+            <th>Actions</th> <!-- New column -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StartTime.ToString("hh:mm tt") - @(item.EndTime?.ToString("hh:mm tt") ?? "")</td>
+                <td><strong>@item.EventTitle</strong></td>
+                <td>@item.EventDescription</td>
+                <td>
+                    @using (Html.BeginForm("Delete", "Timeline", new { id = item.EventId }, FormMethod.Post, new { onsubmit = "return confirm('Are you sure you want to delete this event?');" }))
+                    {
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

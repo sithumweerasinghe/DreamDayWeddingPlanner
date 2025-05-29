@@ -1,0 +1,37 @@
+@model DreamDayWeddingPlanner.Models.TimelineEvent
+
+@{
+    ViewBag.Title = "Add Timeline Event";
+}
+
+<h2>Add Timeline Event</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.LabelFor(m => m.EventTitle)
+        @Html.TextBoxFor(m => m.EventTitle)
+        @Html.ValidationMessageFor(m => m.EventTitle)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.EventDescription)
+        @Html.TextAreaFor(m => m.EventDescription)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.StartTime)
+        @Html.TextBoxFor(m => m.StartTime, "{0:yyyy-MM-ddTHH:mm}", new { type = "datetime-local" })
+        @Html.ValidationMessageFor(m => m.StartTime)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.EndTime)
+        @Html.TextBoxFor(m => m.EndTime, "{0:yyyy-MM-ddTHH:mm}", new { type = "datetime-local" })
+        @Html.ValidationMessageFor(m => m.EndTime)
+    </div>
+
+    <button type="submit">Add Event</button>
+}
