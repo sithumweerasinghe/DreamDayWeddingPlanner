@@ -3,14 +3,14 @@
     ViewBag.Title = "Dashboard";
 }
 
-<div class="container mt-5">
-    <h2 class="text-center">Welcome, @Session["Username"]!</h2>
+<div class="container mt-5" style="padding:0px 10%;">
+    <h2 class="text-center" style="width:50%; text-align:left;">Welcome, @Session["Username"]!</h2>
 
     @if (Model != null)
     {
         <div class="card mt-4 shadow">
             <div class="card-body">
-                <h4 class="card-title">Wedding Overview</h4>
+                <h4 class="card-title" style="text-align:center;">Wedding Overview</h4>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>Title:</strong> @Model.Title</li>
                     <li class="list-group-item"><strong>Date:</strong> @Model.WeddingDate.ToString("yyyy-MM-dd")</li>
@@ -21,13 +21,17 @@
                     </div>
 
                 </ul>
-                <a href="@Url.Action("Checklist", "Couple", new { weddingId = Model.WeddingId })" class="btn btn-primary mt-3">Go to Checklist</a>
-                <a href="@Url.Action("BrowseVendors", "Couple")" class="btn btn-info mt-3 ml-2">Browse Vendors</a>
-                <a href="@Url.Action("Cart", "Couple")" class="btn btn-warning mt-2">View Budget Cart</a>
-                <a href="@Url.Action("Index", "Timeline")" class="btn btn-primary">Manage Wedding Timeline</a>
-                <a href="@Url.Action("Index", "Guest")" class="btn btn-primary">Manage Guests</a>
+                <div style="width:100%; height:100%; display:flex; justify-content:center;">
+                    <div style=" display:flex; justify-content:space-between; gap: 10px; ">
+                        <a href="@Url.Action("Checklist", "Couple", new { weddingId = Model.WeddingId })" class="btn btn-primary mt-3">Go to Checklist</a>
+                        <a href="@Url.Action("BrowseVendors", "Couple")" class="btn btn-info mt-3 ml-2">Browse Vendors</a>
+                        <a href="@Url.Action("Cart", "Couple")" class="btn btn-warning mt-2">View Budget Cart</a>
+                        <a href="@Url.Action("Index", "Timeline")" class="btn btn-primary">Manage Wedding Timeline</a>
+                        <a href="@Url.Action("Index", "Guest")" class="btn btn-primary">Manage Guests</a>
+                    </div>
 
 
+                </div>
             </div>
         </div>
     }
