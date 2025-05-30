@@ -1,35 +1,37 @@
 @model List<DreamDayWeddingPlanner.Models.Guest>
 
-<h2>Guest List</h2>
-<a href="@Url.Action("Add", "Guest")" class="btn btn-success">Add Guest</a>
+<div style="padding:2% 10%;">
+    <h2>Guest List</h2>
+    <a href="@Url.Action("Add", "Guest")" class="btn btn-success">Add Guest</a>
 
-<table class="table table-striped mt-3">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>RSVP</th>
-            <th>Meal</th>
-            <th>Seat</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var guest in Model)
-        {
+    <table class="table table-striped mt-3">
+        <thead>
             <tr>
-                <td>@guest.GuestName</td>
-                <td>@guest.Email</td>
-                <td>@guest.RsvpStatus</td>
-                <td>@guest.MealPreference</td>
-                <td>@guest.SeatNumber</td>
-                <td>
-                    @using (Html.BeginForm("Delete", "Guest", new { id = guest.GuestId }, FormMethod.Post, new { onsubmit = "return confirm('Delete this guest?');" }))
-                    {
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    }
-                </td>
+                <th>Name</th>
+                <th>Email</th>
+                <th>RSVP</th>
+                <th>Meal</th>
+                <th>Seat</th>
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var guest in Model)
+            {
+                <tr>
+                    <td>@guest.GuestName</td>
+                    <td>@guest.Email</td>
+                    <td>@guest.RsvpStatus</td>
+                    <td>@guest.MealPreference</td>
+                    <td>@guest.SeatNumber</td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "Guest", new { id = guest.GuestId }, FormMethod.Post, new { onsubmit = "return confirm('Delete this guest?');" }))
+                        {
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

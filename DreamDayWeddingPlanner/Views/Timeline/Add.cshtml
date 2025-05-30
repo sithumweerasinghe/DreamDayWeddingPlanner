@@ -4,6 +4,80 @@
     ViewBag.Title = "Add Timeline Event";
 }
 
+<style>
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        color: #555;
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="datetime-local"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+        input:focus,
+        textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+    textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .validation-summary-errors,
+    .field-validation-error {
+        color: #d9534f;
+        font-size: 13px;
+    }
+
+    button[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+</style>
+
 <h2>Add Timeline Event</h2>
 
 @using (Html.BeginForm())
@@ -33,5 +107,7 @@
         @Html.ValidationMessageFor(m => m.EndTime)
     </div>
 
-    <button type="submit">Add Event</button>
+    <button type="submit" style="width:50%;">Add Event</button>
+
+    <a href="@Url.Action("Dashboard", "Couple")" class="btn btn-secondary mt-3">Back to Dashboard</a>
 }

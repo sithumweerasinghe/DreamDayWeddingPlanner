@@ -5,7 +5,7 @@
     decimal total = Model.Sum(x => x.Vendor.Price * x.Quantity);
 }
 
-<div class="container mt-5">
+<div class="container mt-5" style="display:flex; flex-direction:column; align-items:center; ">
     <h2 class="text-center mb-4">Your Selected Vendors</h2>
 
     @if (!Model.Any())
@@ -14,7 +14,7 @@
     }
     else
     {
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped" style="width:80%;">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -48,4 +48,4 @@
 
     }
 </div>
-<a href="@Url.Action("MyWeddings", "Couple")" class="btn btn-secondary mt-3">Back to My Weddings</a>
+<a href="@Url.Action("Dashboard", "Couple")" class="btn btn-secondary mt-3">Back to Dashboard</a>

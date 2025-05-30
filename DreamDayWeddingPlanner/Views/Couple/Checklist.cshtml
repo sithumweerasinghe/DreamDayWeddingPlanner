@@ -13,8 +13,8 @@
         @Html.AntiForgeryToken()
         @Html.Hidden("weddingId", weddingId)
 
-        <div class="form-group row mt-4">
-            <div class="col-md-9">
+        <div class="form-group row mt-4" style="display:flex; padding:1% 10%; width:100%">
+            <div class="col-md-9" style="width:auto;">
                 <input type="text" name="task" class="form-control" placeholder="Add new task..." required />
             </div>
             <div class="col-md-3">
@@ -22,8 +22,8 @@
             </div>
         </div>
     }
-
-    <table class="table table-striped mt-4">
+<div style="display:flex; justify-content:center;">
+    <table class="table table-striped mt-4" style="width:auto; min-width:70%;">
         <thead class="thead-dark">
             <tr>
                 <th>Task</th>
@@ -54,6 +54,6 @@
             }
         </tbody>
     </table>
-
-    <a href="@Url.Action("MyWeddings", "Couple")" class="btn btn-secondary mt-3">Back to My Weddings</a>
+    </div>
+    <a href="@Url.Action("Dashboard", "Couple")" class="btn btn-secondary mt-3">Back to My Weddings</a>
 </div>

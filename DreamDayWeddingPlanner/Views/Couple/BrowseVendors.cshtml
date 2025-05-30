@@ -12,7 +12,7 @@
     }
     else
     {
-        <div class="row">
+        <div class="row" style="width:100%; padding:50px;">
             @foreach (var vendor in Model)
             {
                 <div class="col-md-4 mb-4">
@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h5 class="card-title">@vendor.Name</h5>
                             <p class="card-text"><strong>Category:</strong> @vendor.Category</p>
-                            <p class="card-text">@vendor.Description</p>
+                            <p class="card-text" style="text-align:justify">@vendor.Description</p>
                             <p class="card-text"><strong>Price:</strong> $@vendor.Price</p>
                             <p class="card-text"><strong>Rating:</strong> @vendor.Rating ⭐</p>
                             <a href="#" class="btn btn-outline-primary w-100">Contact Vendor</a>
@@ -33,6 +33,10 @@
         </div>
     }
     <div class="text-center mt-4">
+        <a href="@Url.Action("Cart", "Couple")" class="btn btn-secondary">Go to Cart</a>
+    </div>
+    <div class="text-center mt-4">
         <a href="@Url.Action("Dashboard", "Couple")" class="btn btn-secondary">Back to Dashboard</a>
     </div>
+
 </div>
