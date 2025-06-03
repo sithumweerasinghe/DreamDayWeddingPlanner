@@ -1,0 +1,34 @@
+@{
+    ViewBag.Title = "System Usage";
+}
+
+<h2>System Usage Monitoring</h2>
+
+<p>This section will show system usage statistics such as login history, active users, and session durations.</p>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Last Login</th>
+            <th>Number of Logins</th>
+            <th>Current Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Example placeholder rows -->
+        <tr>
+            <td>planner1</td>
+            <td>2025-06-01 10:20 AM</td>
+            <td>45</td>
+            <td>Active</td>
+        </tr>
+        <tr>
+            <td>couple1</td>
+            <td>2025-05-30 09:15 PM</td>
+            <td>12</td>
+            <td>Offline</td>
+        </tr>
+    </tbody>
+</table>
+<a href="@Url.Action("Dashboard", "Admin")" class="btn btn-secondary mt-3">Back to Dashboard</a>

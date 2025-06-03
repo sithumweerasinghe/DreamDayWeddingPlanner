@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = "Vendor Report";
+}
+
+<h2>Vendor Report</h2>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Vendor ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service Type</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>V001</td><td>Elegant Catering</td><td>catering@example.com</td><td>Catering</td><td>4.6</td></tr>
+        <tr><td>V002</td><td>Floral Delights</td><td>floral@example.com</td><td>Florist</td><td>4.9</td></tr>
+        <tr><td>V003</td><td>DJ Max</td><td>djmax@example.com</td><td>Music</td><td>4.7</td></tr>
+    </tbody>
+</table>
+<a href="@Url.Action("Dashboard", "Admin")" class="btn btn-secondary mt-3">Back to Dashboard</a>

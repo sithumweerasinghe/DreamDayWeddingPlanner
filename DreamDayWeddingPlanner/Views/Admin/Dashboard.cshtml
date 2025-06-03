@@ -1,14 +1,19 @@
 ﻿@model List<DreamDayWeddingPlanner.Models.User>
+@{
+    var couples = ViewBag.Couples as List<DreamDayWeddingPlanner.Models.User>;
+}
 
-<h2>Planner List</h2>
+<h2>Admin Dashboard</h2>
+
 <a href="@Url.Action("AddPlanner", "Admin")" class="btn btn-info mt-3 ml-2">Add Planner</a>
+<a href="@Url.Action("SystemUsage", "Admin")" class="btn btn-secondary mt-3 ml-2">System Usage</a>
+<a href="@Url.Action("VendorManagement", "Admin")" class="btn btn-secondary mt-3 ml-2">Vendor Management</a>
+<a href="@Url.Action("GenerateReports", "Admin")" class="btn btn-secondary mt-3 ml-2">Generate Reports</a>
+
+<h3 class="mt-4">Planners</h3>
 <table class="table table-striped">
     <thead>
-        <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Actions</th>
-        </tr>
+        <tr><th>Username</th><th>Email</th><th>Actions</th></tr>
     </thead>
     <tbody>
         @foreach (var planner in Model)
@@ -18,12 +23,24 @@
                 <td>@planner.Email</td>
                 <td>
                     @Html.ActionLink("Delete", "DeletePlanner", "Admin", new { id = planner.UserId },
-                    new
-                         {
-                             onclick = "return confirm('Are you sure you want to delete this planner?');",
-                          @class = "btn btn-danger btn-sm"
-                         })
+                    new { onclick = "return confirm('Are you sure you want to delete this planner?');", @class = "btn btn-danger btn-sm" })
                 </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3 class="mt-4">Couples</h3>
+<table class="table table-striped">
+    <thead>
+        <tr><th>Username</th><th>Email</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var couple in couples)
+        {
+            <tr>
+                <td>@couple.Username</td>
+                <td>@couple.Email</td>
             </tr>
         }
     </tbody>

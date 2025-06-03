@@ -1,0 +1,18 @@
+@{
+    ViewBag.Title = "Generate Reports";
+}
+
+<h2>Generate Reports</h2>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        @Html.ActionLink("User Report", "UserReport")
+    </li>
+    <li class="list-group-item">
+        @Html.ActionLink("Planner Performance Report", "PlannerPerformanceReport")
+    </li>
+    <li class="list-group-item">
+        @Html.ActionLink("Vendor Report", "VendorReport")
+    </li>
+</ul>
+<a href="@Url.Action("Dashboard", "Admin")" class="btn btn-secondary mt-3">Back to Dashboard</a>

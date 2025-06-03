@@ -252,6 +252,14 @@
     <Content Include="Views\Timeline\Add.cshtml" />
     <Content Include="Views\Guest\Index.cshtml" />
     <Content Include="Views\Guest\Add.cshtml" />
+    <Content Include="Views\Admin\SystemUsage.cshtml" />
+    <Content Include="Views\Admin\VendorManagement.cshtml" />
+    <Content Include="Views\Admin\GenerateReports.cshtml" />
+    <Content Include="Views\Admin\AddVendor.cshtml" />
+    <Content Include="Views\Admin\EditVendor.cshtml" />
+    <Content Include="Views\Admin\UserReport.cshtml" />
+    <Content Include="Views\Admin\PlannerPerformanceReport.cshtml" />
+    <Content Include="Views\Admin\VendorReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

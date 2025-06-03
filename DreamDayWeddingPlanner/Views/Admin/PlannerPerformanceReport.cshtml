@@ -1,0 +1,22 @@
+@{
+    ViewBag.Title = "Planner Performance Report";
+}
+
+<h2>Planner Performance Report</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Planner</th>
+            <th>Total Events Planned</th>
+            <th>Avg. Client Rating</th>
+            <th>Completed Projects</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Emily Rose</td><td>12</td><td>4.8</td><td>11</td></tr>
+        <tr><td>James Carter</td><td>9</td><td>4.5</td><td>9</td></tr>
+        <tr><td>Priya Sharma</td><td>15</td><td>4.9</td><td>14</td></tr>
+    </tbody>
+</table>
+<a href="@Url.Action("Dashboard", "Admin")" class="btn btn-secondary mt-3">Back to Dashboard</a>

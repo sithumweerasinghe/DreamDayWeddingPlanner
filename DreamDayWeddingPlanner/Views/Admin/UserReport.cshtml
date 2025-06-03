@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = "User Report";
+}
+
+<h2>User Report</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Registered Date</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>john_doe</td><td>john@example.com</td><td>2024-01-05</td><td>Planner</td></tr>
+        <tr><td>2</td><td>susan_m</td><td>susan@example.com</td><td>2024-02-12</td><td>Customer</td></tr>
+        <tr><td>3</td><td>admin123</td><td>admin@example.com</td><td>2023-12-25</td><td>Admin</td></tr>
+    </tbody>
+</table>
+<a href="@Url.Action("Dashboard", "Admin")" class="btn btn-secondary mt-3">Back to Dashboard</a>

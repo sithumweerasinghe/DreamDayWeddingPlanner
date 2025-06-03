@@ -1,0 +1,26 @@
+@model DreamDayWeddingPlanner.Models.Vendor
+
+<h2>Edit Vendor</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.VendorId)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Category)
+        @Html.TextBoxFor(m => m.Category, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Rating)
+        @Html.TextBoxFor(m => m.Rating, new { @class = "form-control", type = "number", step = "0.1", min = "0", max = "5" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="@Url.Action("Dashboard", "Admin")" class="btn btn-secondary mt-3">Back to Dashboard</a>
+}
